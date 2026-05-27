@@ -1,0 +1,347 @@
+/* ── Global reset & base ───────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f5f4f0;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+/* ── App shell ─────────────────────────────────────── */
+.app-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+  border-right: 1px solid #e5e3dc;
+  border-left: 1px solid #e5e3dc;
+}
+
+/* ── Header ────────────────────────────────────────── */
+.app-header {
+  border-bottom: 1px solid #e5e3dc;
+}
+
+.brand-badge {
+  width: 36px;
+  height: 36px;
+  background: #c0392b;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.header-meta {
+  font-size: 12px;
+  color: #888;
+  margin-left: 4px;
+}
+
+.header-range {
+  font-size: 12px;
+  color: #555;
+  margin-left: auto;
+}
+
+/* ── Slider bar ────────────────────────────────────── */
+.slider-bar {
+  background: #faf9f6;
+  border-bottom: 1px solid #e5e3dc;
+}
+
+.slider-track {
+  height: 4px;
+  background: #e5e3dc;
+  border-radius: 2px;
+  position: relative;
+}
+
+.slider-fill {
+  height: 100%;
+  width: 8%;
+  background: #c0392b;
+  border-radius: 2px;
+}
+
+.slider-labels {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+/* ── Tab nav ───────────────────────────────────────── */
+.tab-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1.5px solid #d6d3cc;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.tab-btn.active {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+}
+
+.tab-btn .tab-multiple {
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+/* ── Metric summary cards ──────────────────────────── */
+.metrics-row {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #e5e3dc;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  flex: 1;
+  padding: 18px 0;
+  text-align: center;
+  border-right: 1px solid #e5e3dc;
+}
+
+.metric-card:last-child {
+  border-right: none;
+}
+
+.metric-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.1;
+}
+
+.metric-value.na {
+  color: #bbb;
+}
+
+.metric-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #999;
+  margin-top: 4px;
+}
+
+/* ── Section description ───────────────────────────── */
+.section-how {
+  margin-bottom: 16px;
+}
+
+.section-how h6 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.section-how p {
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 4px;
+}
+
+.section-hint {
+  font-size: 11px;
+  color: #c0392b;
+  font-style: italic;
+}
+
+/* ── Formula section card ──────────────────────────── */
+.formula-section {
+  border: 1px solid #e5e3dc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.formula-section-header {
+  background: #faf9f6;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #e5e3dc;
+}
+
+.formula-section-number {
+  width: 22px;
+  height: 22px;
+  background: #e5e3dc;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.formula-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.formula-section-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Formula row ───────────────────────────────────── */
+.formula-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.formula-row .row-labels {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* ── Operator / punctuation tokens ────────────────── */
+.op {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  padding: 0 2px;
+  line-height: 28px;
+}
+
+.result-token {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  padding: 0 4px;
+  line-height: 28px;
+}
+
+/* ── Input / display boxes ─────────────────────────── */
+.labeled-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.box-label {
+  font-size: 9px;
+  color: #888;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 70px;
+}
+
+/* Editable orange box */
+.editable-input {
+  border: 1.5px solid #e8906a;
+  border-radius: 4px;
+  background: #fff8f5;
+  color: #c0392b;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 3px 6px;
+  width: auto;
+  min-width: 52px;
+  height: 28px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.editable-input:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.15);
+}
+
+/* Disabled grey box */
+.disabled-box {
+  border: 1.5px solid #d6d3cc;
+  border-radius: 4px;
+  background: #f5f4f0;
+  color: #888;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 3px 6px;
+  min-width: 52px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+/* ── Tab content header ────────────────────────────── */
+.tab-content-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.tab-content-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tab-content-title .multiple {
+  color: #c0392b;
+}
+
+.tab-close-btn {
+  background: none;
+  border: 1.5px solid #d6d3cc;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  color: #aaa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}

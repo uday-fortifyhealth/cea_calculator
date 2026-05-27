@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Command node, npm, npx -ErrorAction SilentlyContinue)",
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; cd \"C:\\\\Users\\\\uday\\\\Claude Projects\\\\CEA Calulator\"; npm create vite@latest . -- --template react 2>&1)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

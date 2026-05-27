@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cea-calculator",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "C:\\Users\\uday\\Claude Projects\\CEA Calulator\\dev.cmd"],
+      "port": 5173
+    }
+  ]
+}
