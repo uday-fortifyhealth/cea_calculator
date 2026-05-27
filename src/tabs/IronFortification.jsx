@@ -123,9 +123,9 @@ export default function IronFortification() {
       {/* §4 — Neonatal deaths averted */}
       <FormulaSection number={4} title="Neonatal deaths averted">
         <FormulaRow>
-          <DisabledBox value={formatValue(c.personYears, 2)}                  label="Deaths/beneficiary" />
+          <DisabledBox value={formatValue(c.personYears, 2)}  />
           <span className="op">×</span>
-          <DisabledBox value={formatValue(c.deathsPerBeneficiaryRate, 3)} />
+          <DisabledBox value={formatValue(c.deathsPerBeneficiaryRate, 3)} label="Deaths/beneficiary" />
           <span className="op">×</span>
           <EditableInput value={p.valuePerDeath} onChange={set('valuePerDeath')} label="Value/death" />
           <span className="op">→</span>
