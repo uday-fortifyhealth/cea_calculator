@@ -95,8 +95,8 @@ export default function IronFortification() {
         </FormulaRow>
       </FormulaSection>
 
-      {/* §3 — Development effects */}
-      <FormulaSection number={3} title="Development effects">
+      {/* §3 — Development Benefits */}
+      <FormulaSection number={3} title="Development Benefits">
         <FormulaRow>
           <EditableInput value={p.pctUnder15} onChange={set('pctUnder15')} label="% under 15" />
           <span className="op">×</span>
