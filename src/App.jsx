@@ -27,7 +27,7 @@ export default function App() {
       <header className="app-header d-flex align-items-center gap-3 px-4 py-3">
         <div className="brand-badge">FH</div>
         <span className="brand-name">Fortify Health</span>
-        <span className="header-meta">Nov 2025</span>
+        <span className="header-meta">CEA (2026–28)</span>
         <span className="header-range">0× — 16×</span>
       </header>
 
