@@ -12,8 +12,8 @@ import {
 } from '../calculations'
 
 const DEFAULT_PARAMS = {
-  grantSize:            '10M',
-  costPerPersonYear:    '0.17',
+  grantSize:            '10189220',
+  costPerPersonYear:    '0.165',
   yldsper100k:          '812',
   trialEffect:          '22.00%',
   internalValidity:     '-15.00%',
@@ -28,7 +28,7 @@ const DEFAULT_PARAMS = {
   wlInfO:               '1.443',
   deathsPerBeneficiary: '0.000032',
   valuePerDeath:        '84',
-  uovPerBeneficiary:    '0.001',
+  uovPerBeneficiary:    '0.0014',
   supplAdj:             '-16.50%',
 }
 
