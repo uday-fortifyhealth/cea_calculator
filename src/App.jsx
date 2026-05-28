@@ -1,17 +1,25 @@
 import { useState } from 'react'
 import TabNav from './components/TabNav'
-import CustomInput from './tabs/CustomInput'
-import IronSupplementation from './tabs/IronSupplementation'
+import CustomInput from './tabs/CustomInput'           // TEMPORARILY HIDDEN — keep import intact
+import IronSupplementation from './tabs/IronSupplementation' // TEMPORARILY HIDDEN — keep import intact
 import IronFortification from './tabs/IronFortification'
 
-const TABS = [
-  { id: 'custom',        label: 'Custom Input',                  multiple: null  },
-  { id: 'supplementation', label: 'Iron Supplementation (India)', multiple: '11.6' },
-  { id: 'fortification',   label: 'Iron Fortification (India)',   multiple: '16.5' },
+// ─── TEMPORARILY HIDDEN TABS ────────────────────────────────────────────────
+// The tabs below are hidden from the navigation UI on request.
+// To restore them, uncomment each entry in VISIBLE_TABS and re-add their
+// content renderers in the <main> block below.
+//
+// { id: 'custom',          label: 'Custom Input',                  multiple: null  },
+// { id: 'supplementation', label: 'Iron Supplementation (India)', multiple: '11.6' },
+// ────────────────────────────────────────────────────────────────────────────
+
+const VISIBLE_TABS = [
+  { id: 'fortification', label: 'Iron Fortification (India)', multiple: '16.5' },
 ]
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('custom')
+  // Default to the only visible tab
+  const [activeTab, setActiveTab] = useState('fortification')
 
   return (
     <div className="app-wrapper">
@@ -34,16 +42,16 @@ export default function App() {
         </div>
       </div>
 
-      {/* Tab navigation */}
+      {/* Tab navigation — shows only VISIBLE_TABS */}
       <div className="px-4 pt-3">
-        <TabNav tabs={TABS} activeTab={activeTab} onSelect={setActiveTab} />
+        <TabNav tabs={VISIBLE_TABS} activeTab={activeTab} onSelect={setActiveTab} />
       </div>
 
       {/* Tab content */}
       <main className="px-4 py-3">
-        {activeTab === 'custom'           && <CustomInput />}
-        {activeTab === 'supplementation'  && <IronSupplementation />}
-        {activeTab === 'fortification'    && <IronFortification />}
+        {/* TEMPORARILY HIDDEN: {activeTab === 'custom'          && <CustomInput />}          */}
+        {/* TEMPORARILY HIDDEN: {activeTab === 'supplementation' && <IronSupplementation />}  */}
+        {activeTab === 'fortification' && <IronFortification />}
       </main>
     </div>
   )
