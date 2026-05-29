@@ -222,31 +222,34 @@ body {
   padding: 12px 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 /* ── Formula row ───────────────────────────────────── */
 .formula-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;   /* top-align so value boxes & operators share the same top edge */
   flex-wrap: wrap;
-  gap: 4px;
-}
-
-.formula-row .row-labels {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 4px;
+  gap: 6px;
+  row-gap: 10px;             /* breathing room between wrapped lines */
 }
 
 /* ── Operator / punctuation tokens ────────────────── */
+/*
+ * Height matches the 28px value boxes so that, with align-items:flex-start
+ * on the row, the operator text is vertically centred at the same position
+ * as the text inside the value boxes — giving a clean mathematical baseline.
+ */
 .op {
   font-size: 14px;
   font-weight: 500;
   color: #555;
   padding: 0 2px;
-  line-height: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .result-token {
@@ -254,7 +257,10 @@ body {
   font-weight: 700;
   color: #1a1a1a;
   padding: 0 4px;
-  line-height: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 /* ── Input / display boxes ─────────────────────────── */
@@ -262,16 +268,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
+  flex-shrink: 0;            /* prevent boxes from being squished */
 }
 
 .box-label {
   font-size: 9px;
   color: #888;
-  white-space: nowrap;
+  white-space: normal;       /* allow long labels to wrap */
   text-align: center;
   line-height: 1.2;
-  max-width: 70px;
+  max-width: 80px;
 }
 
 /* Editable orange box */
