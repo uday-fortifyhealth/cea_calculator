@@ -166,8 +166,8 @@ export default function IronFortification() {
         <FormulaRow>
           <DisabledBox value={formatValue(c.personYears, 2)}  />
           <span className="op">×</span>
-          <DisabledBox value={formatValue(c.deathsPerBeneficiaryRate, 3)} label="Deaths/beneficiary" />
-          <span className="op">×</span>
+          <DisabledBox value={formatValue(c.deathsPerBeneficiaryRate * 100000, 1)} label="Deaths averted per 100,000 beneficiaries" />
+          <span className="op">÷ 100,000 ×</span>
           <EditableInput value={p.valuePerDeath} onChange={set('valuePerDeath')} label="Value/death" />
           <span className="op">→</span>
           <DisabledBox value={formatValue(c.neonatalUov, 1)} label="UoV" />
