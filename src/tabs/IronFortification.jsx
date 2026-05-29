@@ -61,6 +61,23 @@ export default function IronFortification() {
         <MetricCard value={peopleReached}      label="People reached" />
       </div>
 
+      {/* Introduction card */}
+      <div className="intro-card">
+        <div className="intro-card-title">About this Cost-Effectiveness Analysis</div>
+        <p>
+          This page shows how GiveWell estimates the impact of every dollar donated to Fortify
+          Health's iron fortification program in India — and how it compares to simply giving that
+          money as cash to people in poverty.
+        </p>
+        <p>
+          To compare different health outcomes, GiveWell assigns numerical values to each outcome.
+          For example, averting one neonatal death is valued at 84 units, while one year lived with
+          anemia-related disability is valued at 2.3 units. These values are drawn from donor
+          surveys, studies of low-income communities, and standard public health measures. GiveWell
+          publishes these assumptions openly so they can be reviewed and scrutinised.
+        </p>
+      </div>
+
       <div className="section-how">
         <h6>How it's calculated</h6>
         <p>Supports large-scale iron fortification and supplementation programs to reduce anemia</p>
@@ -76,6 +93,13 @@ export default function IronFortification() {
           <span className="op">=</span>
           <DisabledBox value={formatValue(c.personYears, 2)} />
         </FormulaRow>
+        <p className="section-explanation">
+          GiveWell estimates Fortify Health will use its $10.2M grant to reach 61.7 million
+          person-years of coverage — meaning the equivalent of 61.7 million people receiving
+          fortified flour for one year. This works out to just $0.165 per person per year (roughly
+          ₹1 per month), after accounting for expected wastage in the supply chain and a
+          conservative adjustment for over-optimistic production projections.
+        </p>
       </FormulaSection>
 
       {/* §2 — Anemia morbidity averted */}
@@ -93,6 +117,15 @@ export default function IronFortification() {
           <span className="op">→</span>
           <DisabledBox value={formatValue(c.anemiaMorbidityUov, 1)} label="UoV" />
         </FormulaRow>
+        <p className="section-explanation">
+          Iron deficiency causes anemia, which reduces quality of life. Among the 61.7 million
+          people reached, GiveWell estimates anemia causes 812 years of healthy life lost per
+          100,000 people annually. Iron fortification reduces anemia by about 22%, further adjusted
+          for how well trial results translate to real-world programs (internal &amp; external
+          validity). In total, this program is estimated to avert 243,100 units of value from
+          anemia alone — the single largest benefit, contributing about 36% of the program's total
+          impact.
+        </p>
       </FormulaSection>
 
       {/* §3 — Development Benefits */}
@@ -118,6 +151,14 @@ export default function IronFortification() {
           <span className="op">→</span>
           <DisabledBox value={formatValue(c.developmentUov, 1)} label="UoV" />
         </FormulaRow>
+        <p className="section-explanation">
+          Children who grow up anemic tend to earn less as adults. About 27% of people reached by
+          this program are under 15 and about 34% of them are anaemic. GiveWell estimates that for
+          every year of childhood anemia averted, future adult income increases by about ~0.4%.
+          Accounting for the time it takes for children to reach earning age (discounted over 40
+          years) and a household income multiplier, this pathway contributes 176,900 units of value
+          — about 27% of total impact.
+        </p>
       </FormulaSection>
 
       {/* §4 — Neonatal deaths averted */}
@@ -131,6 +172,14 @@ export default function IronFortification() {
           <span className="op">→</span>
           <DisabledBox value={formatValue(c.neonatalUov, 1)} label="UoV" />
         </FormulaRow>
+        <p className="section-explanation">
+          Iron during pregnancy reduces the risk of neonatal death. The model estimates about 3.2
+          neonatal deaths are averted per 100,000 beneficiaries after conservative adjustments for
+          the difference between iron supplements and fortification. This pathway contributes
+          166,000 units of value — about 25% of total impact. GiveWell applies heavy discounts
+          given that the evidence comes from iron supplementation studies, not fortification
+          directly.
+        </p>
       </FormulaSection>
 
       {/* §5 — Physical work capacity */}
@@ -142,6 +191,12 @@ export default function IronFortification() {
           <span className="op">→</span>
           <DisabledBox value={formatValue(c.physicalUov, 1)} label="UoV" />
         </FormulaRow>
+        <p className="section-explanation">
+          Among working-age adults who are anaemic and do physically demanding jobs (about 5% of
+          all beneficiaries), iron fortification increases average income per beneficiary by 0.04%.
+          After adjusting for resource sharing and removing overlap with other benefit streams, this
+          contributes 86,500 units of value — about 13% of total impact.
+        </p>
       </FormulaSection>
 
       {/* §6 — Total value & CE multiple */}
@@ -157,6 +212,13 @@ export default function IronFortification() {
         <div style={{ fontSize: 13, fontWeight: 600, marginTop: 4 }}>
           {c.ceMultiple > 0 ? `${formatMultiple(c.ceMultiple)} cash transfers` : '— cash transfers'}
         </div>
+        <p className="section-explanation">
+          Adding up all four pathways gives a total of 672,500 units of value. After a final 16.5%
+          downward adjustment (to account for a supplement-based program that fortification may
+          partially substitute), the net value is 561,500 units. Compared to simply giving that
+          money as cash to poor households, this program delivers 16.5× more benefit per dollar —
+          making it one of GiveWell's most cost-effective grants.
+        </p>
       </FormulaSection>
     </div>
   )
