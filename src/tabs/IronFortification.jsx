@@ -12,7 +12,7 @@ import {
 } from '../calculations'
 
 const DEFAULT_PARAMS = {
-  grantSize:            '10189220',
+  grantSize:            '10,189,220',
   costPerPersonYear:    '0.165',
   yldsper100k:          '812',
   trialEffect:          '22.00%',
